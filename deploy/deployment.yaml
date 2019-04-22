@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: star-dp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: star
+  template:
+    metadata:
+      labels:
+        app: star
+    spec:
+      containers:
+      - name: star
+        image: tiwafuchi/clarity-starwars:V01
+        ports:
+        - containerPort: 80
